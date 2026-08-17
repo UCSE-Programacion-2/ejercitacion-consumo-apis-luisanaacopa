@@ -44,4 +44,7 @@ async function cargarUsuario() {
   renderizarDatosUsuario(datos);
 }
 
+const botonRandom = document.getElementById('random');
+botonRandom.addEventListener('click', cargarUsuario);
+
 cargarUsuario();
