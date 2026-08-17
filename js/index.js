@@ -3,13 +3,6 @@
 /* -------------------------------- CONSIGNA 1 -------------------------------- */
 // 1. Realizar una petición a la API de usuarios utilizando fetch().
 //    URL: http://localhost:3000/api/user  (iniciar antes con npm start)
-const cargarUsuario = async () => {
-  const response = await fetch('http://localhost:3000/api/user');
-  const datos = await response.json();
-
-  renderizarDatosUsuario(datos);
-};
-
 // 2. Al recibir la respuesta, convertirla a JSON con response.json().
 // 3. Invocar renderizarDatosUsuario() pasándole el objeto JSON completo.
 
@@ -35,8 +28,11 @@ function renderizarDatosUsuario(datos) {
 // 3. Al hacer clic en el botón, se debe realizar un nuevo pedido a la API
 //    y actualizar la tarjeta sin recargar la página.
 
-function cargarUsuario() {
-  // Escribe aquí tu código para realizar un nuevo pedido a la API y actualizar la tarjeta
+async function cargarUsuario() {
+  const response = await fetch('http://localhost:3000/api/user');
+  const datos = await response.json();
+
+  renderizarDatosUsuario(datos);
 }
 
 cargarUsuario();
